@@ -1,4 +1,8 @@
-# Pixyll
+# Dixyll
+
+The following is the unedited README from Pixyll.
+
+If future me is reading this; put down the tea and write up a README already.
 
 [pixyll.com](http://www.pixyll.com)
 
