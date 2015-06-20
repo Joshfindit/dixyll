@@ -3,8 +3,8 @@ title:       Dixyll
 email:       your_email@example.com
 author:      Josh Findit
 description: "Simple, beautiful, and without dates. Designed to emphasize your evergreen content."
-baseurl:     "http://joshfindit.github.io/dixyll/"
-#url:         "http://pixyll.com"
+baseurl:     ""
+url:         "http://joshfindit.github.io/dixyll/"
 
 # Google analytics
 google_analytics:
