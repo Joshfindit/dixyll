@@ -11,11 +11,11 @@ layout: default
   <h1>{{ page.title }}</h1>
   {% if site.show_post_date %}
     <span class="post-meta">{{ page.date | date: "%b %-d, %Y" }}</span><br>
+    {% if page.update_date %}
+      <span class="post-meta">Updated: {{ page.update_date | date: "%b %-d, %Y" }}</span><br>
+    {% endif %}
   {% endif %}
-  {% if page.update_date %}
-    <span class="post-meta">Updated: {{ page.update_date | date: "%b %-d, %Y" }}</span><br>
-  {% endif %}
-  <span class="post-meta small">{{ minutes }} minute read</span>
+  <span class="post-meta small">{% if page.sequence %}#{{ page.sequence }},</br>{% endif %}{{ minutes }} minute read</span>
 </div>
 
 <article class="post-content">
@@ -39,6 +39,17 @@ layout: default
 
 {% if site.show_post_footers %}
   {% include post_footer.html %}
+{% endif %}
+
+{% if site.show_post_blank_of_blank %}
+  {% assign post_index = 1 %}
+  {% for post in site.posts reversed %}
+    {% if post.url == page.url %}
+      <div align="center" class="post-meta small">Item {{ post_index }} of {{ site.posts | size }}</div>
+    {% else %}
+      {% assign post_index = post_index | plus: 1 %}
+    {% endif %}
+  {% endfor %}
 {% endif %}
 
 {% if site.disqus_shortname %}
